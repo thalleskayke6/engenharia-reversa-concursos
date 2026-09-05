@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banner.svg" alt="Engenharia reversa da banca" width="100%">
+<img src="assets/banner.png" alt="Engenharia reversa da banca" width="100%">
 
 # Engenharia reversa da banca
 
