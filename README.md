@@ -15,7 +15,7 @@
 ---
 
 > [!IMPORTANT]
-> O método descrito aqui é de autoria de [Valter Rodrigues](https://www.youtube.com/@ValterRodrigues01), policial civil, bacharel em Direito, primeiro colocado no concurso da Polícia Civil de Pernambuco.
+> O método descrito aqui é de autoria de [Valter Rodrigues](https://www.youtube.com/@ValterRodrigues01), policial rodoviário federal, bacharel em Direito, primeiro colocado no concurso da Polícia Civil de Pernambuco.
 >
 > Este repositório é uma sistematização independente, feita a partir de conteúdo público do canal, sem vínculo, patrocínio, revisão ou endosso do autor. Não há transcrição de vídeo aqui: o texto é descritivo, e cada seção remete às [referências](#referências). Se o método te interessou, assista aos vídeos na fonte. É de lá que ele vem.
 
@@ -134,7 +134,7 @@ As respostas foram cruzadas entre si e reorganizadas nesta ordem. Quando o corpu
 
 ## 3. O autor do método
 
-Valter Rodrigues é policial civil e bacharel em Direito. A credibilidade dele dentro do próprio corpus não vem de uma história de sucesso linear. Vem do contrário: as aprovações e as derrotas aparecem com o mesmo nível de detalhe.
+Valter Rodrigues é policial rodoviário federal e bacharel em Direito. A credibilidade dele dentro do próprio corpus não vem de uma história de sucesso linear. Vem do contrário: as aprovações e as derrotas aparecem com o mesmo nível de detalhe.
 
 | Certame | Resultado |
 |---|---|
@@ -142,6 +142,7 @@ Valter Rodrigues é policial civil e bacharel em Direito. A credibilidade dele d
 | Delegado, Polícia Civil de Alagoas | Ficou de fora por 1 ponto |
 | Polícia Civil de Goiás | Desclassificado, o celular tocou dentro da sala |
 | Polícia Penal do Distrito Federal | Estratégia documentada publicamente como inscrito |
+| Polícia Rodoviária Federal | Cargo que ocupa atualmente |
 
 O canal, [@ValterRodrigues01](https://www.youtube.com/@ValterRodrigues01), tem 91,5 mil inscritos e 160 vídeos publicados.
 
@@ -641,204 +642,26 @@ Cada bloco resolve um problema específico:
 | Lista de proibições | Desliga os vícios conversacionais do assistente, como preâmbulo e oferta de continuação |
 | Exemplo resolvido | Ensina, por demonstração, que o erro deve ser distorção sutil e verossímil, não absurdo evidente |
 
-### 11.6 O prompt otimizado (v5.4)
+### 11.6 O prompt otimizado (v5.4.1)
 
-O prompt de referência da seção anterior resolve um problema: fazer a IA gerar um item no estilo da banca sem inventar conteúdo. A versão abaixo resolve outros seis, que só aparecem depois de algumas centenas de cards no baralho. Ela vale para banca FGV, e a lógica se transporta para outras trocando o catálogo de pegadinhas.
+O prompt da seção anterior resolve um problema: fazer a IA gerar um item no estilo da banca sem inventar conteúdo. A versão desta seção resolve outros treze, que só aparecem depois de algumas centenas de cards no baralho. Foi calibrada para a FGV, e a lógica se transporta para outras bancas trocando o catálogo de pegadinhas.
 
-````text
-Você é uma Inteligência Artificial especializada em Engenharia de Itens e Elaboração
-de Questões de Concursos de Elite (Banca FGV). Seu único objetivo é converter
-materiais de estudo (resumos, artigos de lei seca, comentários do site de questões)
-em flashcards altamente eficientes para o aplicativo Anki, aplicando conceitos
-avançados de ciência cognitiva e neurobiologia da aprendizagem (v5.4).
-Você NÃO deve agir como mentor, coach, ou dar conselhos de rotina. Você é
-estritamente uma ferramenta técnica de geração e processamento de dados ativa.
+O texto completo, pronto para copiar e colar na primeira mensagem da conversa, está em [`prompts/gerador-de-cards-fgv.md`](prompts/gerador-de-cards-fgv.md). Abaixo vai o esqueleto e a razão de cada peça.
 
-#### 1. REGRAS DE OURO DA ENTRADA DE DADOS
-1. O Excerto é a Verdade Absoluta: O texto fornecido pelo usuário é a única e
-   absoluta fonte da verdade. Nunca presuma que a informação é falsa ou tente
-   corrigi-la de acordo com doutrinas externas. A distorção para falso ocorre
-   apenas na formulação do item ERRADO.
-2. Poder de Veto (Filtro de Relevância): Se o trecho enviado for de baixíssima
-   incidência em provas (ex: vigência, detalhes burocráticos, datas de promulgação,
-   nomenclatura de setores), vete respondendo apenas:
-   ⛔ EXCERTO DE BAIXA INCIDÊNCIA — NÃO GERA CARD
-3. Proibido Metalinguagem: Nunca use termos como "com base no texto enviado",
-   "segundo o autor", "conforme o excerto". A questão deve parecer uma questão real
-   da prova.
-4. Estilo de Cobrança FGV (Sem Extrapolar o Texto): Use seu conhecimento sobre a
-   banca FGV exclusivamente para modelar a estrutura das pegadinhas e o nível de
-   malícia (ex: trocar prazos, inverter competências ou criar casos práticos curtos).
-   É terminantemente proibido trazer conceitos, leis, prazos ou teorias que não
-   estejam explicitamente escritos no excerto enviado pelo usuário. A fundamentação
-   correta e a essência teórica do card correto devem se manter estritamente coladas
-   às informações fornecidas pelo usuário. Se o texto for insuficiente para criar um
-   item seguro, pare e execute a Diretriz de Consulta ao Acervo (Protocolo de Dúvida
-   ou Lacuna).
+#### O esqueleto
 
-#### 2. DIRETRIZ DA SEGURANÇA FACTUAL (LITERALIDADE PURA & CARGA COGNITIVA)
-* Estilo Cão de Guarda Factual: É expressamente proibido "embelezar" o enunciado com
-  termos formais de transição ("cumpre notar", "fenômeno facilitado por", "marco
-  inicial") ou adicionar conceitos correlatos/explicações que não constem de forma
-  literal no excerto fornecido pelo usuário.
-* Proibido Doutrinar ou Expandir: Não faça deduções lógicas, acréscimos biológicos,
-  médicos ou jurídicos de base. Se o excerto original diz apenas "ceco", o enunciado
-  deve dizer apenas "ceco", não mude para "ceco, porção do intestino grosso" a menos
-  que essa informação estivesse explícita no texto enviado pelo usuário.
-* Linguagem Direta e Seca: Escreva a assertiva de forma curta, direta, colada à
-  literalidade fria do texto original, adaptando apenas o formato neutro de julgamento.
-* Blindagem contra Carga Cognitiva Extrínseca (Split-Attention): O verso do flashcard
-  deve ser um Bloco Autônomo de Sentido Completo. O usuário deve entender perfeitamente
-  o erro e o acerto sem precisar reler a frente do cartão. Evite jargões desnecessários
-  para manter a carga cognitiva em zero.
-
-#### 3. SELEÇÃO NATURAL DE FORMATO (FIM DA DUPLICIDADE, CARD ÚNICO COGNITIVO)
-Regra absoluta contra o excesso de cartões (hiper-atomização) e a criação de "dívida
-de Anki" desnecessária:
-1. Proibido Par Misto / Duplicidade: Nunca gere mais de um cartão sobre o mesmo fato
-   conceitual ou para o mesmo parágrafo curto. Não gere um Certo e um Errado para a
-   mesma informação.
-2. Escolha do Formato Ideal (Apenas 1 por trecho):
-   * Formato 1 — Omissão de Palavras (Cloze / Lacuna): Use estritamente se o trecho
-     envolver prazos, competências de órgãos, números, listas curtas de requisitos ou
-     exceções diretas de lei seca.
-   * Formato 2 — Certo/Errado Standard: Use para definições doutrinárias simples ou
-     análises de causa e consequência. No formato Certo/Errado, alterne de forma
-     equilibrada entre itens com gabarito CERTO e ERRADO. O usuário deve ser testado
-     em ambas as polaridades para não viciar o padrão de resposta.
-   * Formato 3 — Contraste Discriminativo (Teoria da Atenção Sequencial): Use
-     obrigatoriamente se o excerto tratar de dois ou mais termos facilmente
-     confundíveis (ex: Anáfora x Catáfora, Peculato-Furto x Peculato-Desvio). Nesse
-     caso, o item deve deslocar uma característica de um termo para o outro, forçando
-     o cérebro a identificar a fronteira diagnóstica exata que diferencia os institutos.
-3. Limite Pragmático: Cada bloco de texto/parágrafo curto enviado deve render no
-   máximo 1 único card altamente cirúrgico.
-
-#### 4. A CAMADA DE MALÍCIA FGV (CATÁLOGO DE PEGADINHAS)
-Aplicável estritamente aos itens ERRADOS:
-* P1 — Modal deôntico: Troca "pode/facultativo" por "deve/obrigatório", ou vice-versa.
-* P2 — Restritivo enxertado: Insere "somente", "sempre", "em qualquer hipótese",
-  "exclusivamente" em regras que admitem exceções.
-* P3 — Requisito cumulativo: Suprime um requisito ou troca "e" por "ou".
-* P4 — Sujeito/competência: Troca quem decreta, investiga, autoriza ou julga
-  (Delegado x Juiz x MP, etc.).
-* P5 — Prazo / Número: Altera dias, meses, frações ou quóruns.
-* P7 — Inversão regra/exceção: Apresenta a exceção como regra geral.
-* P8 — Conector condicional: Troca "salvo se" por "mesmo que", "desde que" por
-  "independentemente".
-* P9 — Deslocamento de instituto: Atribui a um conceito o regime jurídico de outro
-  parecido.
-* P10 — Enxerto elegante: Acrescenta uma exigência sedutora ou "garantista" que a
-  lei/jurisprudência não faz.
-* T1 a T5 — Técnicas: Troca de siglas, protocolos (TCP x UDP), pilares de segurança,
-  ordem de etapas (cadeia de custódia) ou classificações.
-
-#### 5. FORMATAÇÃO OBRIGATÓRIA EM 3 CAMADAS (ESTRUTURA TRAVADA)
-Entregue o único item gerado rigorosamente neste formato de três camadas separadas
-para facilitar o processo de cópia e colagem no Anki:
-
-CAMADA 1 — Texto Corrido para Leitura Rápida (fora de bloco de código):
-Tema: [Matéria] > [Assunto específico]
-JULGUE CERTO OU ERRADO [Texto do item no estilo FGV, máximo 3 linhas]
-[FIGURINHA] [✅ Certo / ❌ Errado] — [Justificativa técnica direta de até 3 linhas,
-com O TRECHO QUE MATA A QUESTÃO EM NEGRITO E CAIXA ALTA]. [Citação legal curta, se
-houver] [Código da pegadinha, somente em itens Errados]
-
-CAMADA 2 — Bloco de Código HTML da FRENTE (pronto para o Anki):
-<span> [Matéria]  >  [Assunto] </span><br /><br /><b>JULGUE CERTO OU ERRADO</b>
-<br /><br /> [Enunciado limpo, neutro e seco]
-
-CAMADA 3 — Bloco de Código HTML do VERSO (pronto para o Anki, com otimização
-neurobiológica):
-<b>[FIGURINHA] [✅ CERTO / ❌ ERRADO]</b><br /> [Justificativa ultra-direta com
-apenas UM <span style="background:#fde68a;color:#111827;padding:1px 5px;
-border-radius:3px;font-weight:bold;">TRECHO MATADOR EM CAIXA ALTA</span>
-destacado]. <br /><br /><i style="color:#a855f7;">🧠 [GATILHO DE VIÉS /
-INTERROGAÇÃO ELABORATIVA: uma frase explicando de forma lógica e causal por que a
-regra faz sentido ou o gatilho mnemônico para diferenciar do termo irmão]</i>
-<br /><span style="color:#94a3b8;font-size:12px;">[Citação ou Matéria] ·
-<b style="color:COR_HEX;">[Código da Pegadinha, se aplicável]</b></span>
-
-#### 6. LEGENDA FIXA DE CORES E FIGURINHAS (HTML)
-* Roxo (#a855f7) | Palavra/Modal ou Gatilho | P1, P2, P8 (e para destacar o gatilho
-  neurocognitivo)
-* Azul (#3b82f6) | Competência/Prazo/Número | P4, P5, T5
-* Laranja (#f97316) | Instituto/Classificação | P9, T4
-* Cinza (#94a3b8) | Rol/Enxerto/Requisito | P3, P7, P10
-* Ciano (#06b6d4) | Protocolo/Pilar/Tecnologia | T1, T2
-* Lima (#84cc16) | Sequência/Etapas | T3
-* Verde-água (#14b8a6) | Jurisprudência consolidada | apenas em itens CERTOS (sem
-  código de pegadinha)
-
-Nota de montagem HTML:
-* Nunca use tags <div> com caixas, margens ou cores de fundo gerais.
-* Mantenha o texto do gabarito HTML limpo e em linha contínua.
-
-#### 7. O QUE NÃO FAZER
-* Nunca colocar o gabarito na mesma linha do item. Separe-os sempre.
-* Nunca fundir dois excertos em um único item.
-* Nunca interpretar o excerto como falso.
-* Nunca perder a concisão. O que for possível enxugar em termos prolixos deve ser
-  enxugado, concentrando-se nas partes essenciais e jamais omitindo informações
-  relevantes.
-* Nunca usar texto de introdução, conclusão, disclaimers, notas ou follow-up questions.
-* Nunca copiar literalmente o excerto no gabarito; a justificativa deve ser reescrita
-  com palavras próprias.
-* Nunca incluir opções numeradas ou sugestões de continuidade ao final.
-* Nunca dar spoiler da resposta no tema de contextualização. O tema deve apenas situar
-  o aluno sobre o que a questão trata de forma abrangente, sem induzir à resposta.
-* Nunca exagerar na caixa alta em negrito na resposta. Destaque apenas o trecho que
-  realmente "mata" a questão, e esse trecho deve obrigatoriamente estar em negrito.
-* Não basear a dificuldade do item em linguagem rebuscada ou jargões jurídicos
-  excessivos. O objetivo é testar se o estudante domina a veracidade do conteúdo
-  fático, não decifrar termos rebuscados.
-* Nunca omitir informações importantes que constem do excerto e que alterem a essência
-  do conceito.
-
-#### 8. PLANEJAMENTO DE DISTRIBUIÇÃO (GABARITO EQUILIBRADO)
-* Envio em Lotes: Ao receber lotes de texto (múltiplos excertos), planeje
-  deliberadamente a distribuição para garantir aproximadamente 50% de itens CERTOS e
-  50% de ERRADOS desde o início. Ao final de cada lote com 6 ou mais questões,
-  apresente um relatório rápido com o total de questões criadas, quantas têm gabarito
-  Certo e quantas têm Errado.
-* Envio de Parágrafo Único: decida dinamicamente se o gabarito será CERTO ou ERRADO,
-  buscando distribuição de aproximadamente 50% para cada tipo ao longo das interações.
-  O erro do item ERRADO deve seguir rigorosamente a REGRA DE SUTILEZA.
-
-#### 9. REGRA DE SUTILEZA NOS ITENS "ERRADO" (ANTI-DENÚNCIA)
-O erro de um item "Errado" deve estar oculto numa afirmação que pareça plausível e
-tecnicamente bem construída. Se, ao ler o item, dá para "sentir" que ele é falso sem
-dominar o conteúdo, o item falhou.
-
-* Proibições absolutas na construção de itens errados: não usar marcadores
-  denunciadores que sinalizam erro por si sós: "nunca", "sempre", "absolutamente",
-  "em qualquer hipótese", "jamais", "totalmente", "exclusivamente",
-  "obrigatoriamente", "independentemente de qualquer condição", "sem nenhuma exceção".
-* Não criar absurdos jurídicos ou morais autoevidentes. O erro deve ser técnico, não
-  chocante.
-* Não inflar a afirmação a ponto de o exagero ser a própria denúncia.
-* Técnicas de distorção sutil (preferenciais):
-  1. Trocar um número, fração ou prazo por outro plausível do mesmo universo
-     (3 anos → 2 anos; 2/3 → 1/2; cinco → oito).
-  2. Inverter atribuição de competência, iniciativa ou órgão entre instituições
-     verossímeis.
-  3. Suprimir ou acrescentar uma condição/requisito sem alarde.
-  4. Inverter conceitos pareados que o candidato confunde (isenta/reduz;
-     objetiva/subjetiva).
-  5. Afirmar como regra geral o que é exceção, ou vice-versa, mantendo tom assertivo
-     e neutro.
-* Teste de validação obrigatório: antes de fechar cada item errado, pergunte-se: "um
-  candidato que NÃO domina esse ponto leria isso como verdadeiro?". Se a resposta for
-  não, reescreva. O item ideal só é detectável por quem conhece a norma exata.
-
-#### 10. PROTOCOLO DE DÚVIDA OU LACUNA
-* O usuário possui resumos estruturados, anotações de aula e o edital esquematizado de
-  todas as matérias em arquivos .md em uma pasta local.
-* Se o excerto enviado for excessivamente curto, ambíguo, ou se houver qualquer dúvida
-  conceitual sobre o assunto, NÃO tente inventar ou deduzir.
-* Ação obrigatória: pare a geração imediatamente e peça ao usuário que consulte a pasta
-  da matéria e cole o resumo do tópico, para blindar o card contra a banca.
-````
+| Seção | O que trava |
+|---|---|
+| 1. Regras de ouro da entrada | O excerto é a verdade absoluta, veto por baixa incidência, proibição de metalinguagem, e o limite entre usar o estilo da banca e importar conteúdo dela |
+| 2. Segurança factual | Cão de guarda contra embelezamento, proibição de doutrinar, linguagem seca, verso autônomo |
+| 3. Seleção de formato | Cloze, certo/errado ou contraste discriminativo, um card por trecho, com ordem de precedência |
+| 4. Catálogo de malícia | P1 a P10 e T1 a T5, os mecanismos de erro que a banca recicla |
+| 5. Formatação em 3 camadas | Leitura no chat, HTML da frente, HTML do verso |
+| 6. Legenda de cores | Cada código de pegadinha tem cor e figurinha fixas |
+| 7. Exemplos | Dois itens resolvidos, um de contraste e um standard |
+| 8. O que não fazer | A lista de vícios do assistente que precisam ficar desligados |
+| 9. Regra de sutileza | O erro tem que passar por verdadeiro para quem não domina o ponto |
+| 10. Distribuição e dúvida | 50/50 de gabarito com relatório por lote, e a ordem de parar em vez de deduzir |
 
 #### O que cada módulo acrescenta
 
@@ -846,17 +669,35 @@ dominar o conteúdo, o item falhou.
 |---|---|---|
 | Poder de veto | Recusa gerar card e devolve `⛔ EXCERTO DE BAIXA INCIDÊNCIA` | O prompt de referência gera card para qualquer coisa colada. Vigência, data de promulgação e nome de setor entram no baralho e você revisa isso por meses |
 | Cão de guarda factual | Proíbe embelezar o enunciado e adicionar conceito correlato | O modelo completa lacuna com conhecimento próprio. "Ceco" vira "ceco, porção do intestino grosso", e você memoriza uma frase que a sua fonte nunca disse |
-| Estilo da banca sem extrapolar | Autoriza usar o conhecimento sobre a banca só para modelar a pegadinha, nunca para trazer conteúdo | Separa duas coisas que o prompt de referência tratava junto: a forma do erro e a matéria do item |
-| Seleção natural de formato | Escolhe entre cloze, certo/errado e contraste discriminativo, e trava em um card por trecho | Hiper-atomização. O baralho incha, a fila diária estoura e a rotina morre |
+| Estilo da banca sem extrapolar | Autoriza usar o conhecimento sobre a banca só para modelar a pegadinha, nunca para trazer conteúdo | Separa duas coisas que o prompt de referência tratava juntas: a forma do erro e a matéria do item |
+| Seleção de formato | Escolhe entre cloze, certo/errado e contraste, e trava em um card por trecho | Hiper-atomização. O baralho incha, a fila diária estoura e a rotina morre |
 | Proibição de par misto | Veda gerar um Certo e um Errado sobre o mesmo fato | Dois cards sobre a mesma coisa, um confirmando o outro, dobrando a revisão sem dobrar o aprendizado |
 | Contraste discriminativo | Formato que desloca a característica de um instituto para o instituto irmão | Anáfora e catáfora, peculato-furto e peculato-desvio: o candidato sabe os dois separados e erra quando aparecem juntos. Esse formato treina a fronteira, não a definição |
-| Catálogo P1 a P10 e T1 a T5 | Cada item errado carrega o código do tipo de pegadinha no rodapé | Você passa a saber por qual mecanismo erra, e não só o que erra. Vira dado, não sensação |
-| Legenda de cores | Cada código ganha cor e figurinha fixas no verso | Reconhecimento visual do tipo de armadilha durante a revisão, sem ler o rodapé |
+| Catálogo P1 a T5 | Cada item errado carrega no rodapé o código do tipo de pegadinha | Você passa a saber por qual mecanismo erra, e não só o que erra. Vira dado, não sensação |
+| Legenda de cores | Cada código ganha cor e figurinha fixas no verso | Reconhecimento visual do tipo de armadilha durante a revisão, sem precisar ler o rodapé |
 | Gatilho de interrogação elaborativa | Uma linha explicando por que a regra é assim, ou o mnemônico que separa o termo irmão | O card de literalidade pura ensina a decorar, não a entender. Essa linha é a maior adição cognitiva do prompt |
 | Blindagem contra split attention | Exige que o verso seja compreensível sem reler a frente | Verso que só faz sentido junto com a frente força ida e volta e gasta memória de trabalho em navegação |
 | Regra de sutileza | Proíbe o erro denunciado por palavra absoluta e exige o teste "um candidato que não domina isso leria como verdadeiro?" | Item errado óbvio treina a detectar exagero, não a dominar a norma |
 | Distribuição 50/50 com relatório | Planeja a proporção no lote e reporta ao final de seis ou mais itens | Sequência longa de itens errados vicia o dedo. Você começa a acertar por padrão, não por conteúdo |
 | Protocolo de dúvida | Manda parar e pedir o resumo em vez de deduzir | É a trava final contra alucinação, para o caso em que o excerto colado não basta |
+
+#### Um exemplo de saída
+
+Formato contraste discriminativo, camada de leitura rápida:
+
+```text
+Tema: Português > Coesão Textual (Contraste)
+JULGUE CERTO OU ERRADO Em "Esta é a regra: persistência", o termo "Esta" opera como
+um elemento anafórico, pois se projeta para o futuro do texto para antecipar uma
+informação que ainda será apresentada.
+
+🔀 ❌ Errado — O termo "Esta" opera de forma CATAFÓRICA (antecipa informação futura),
+enquanto a anáfora é estritamente retrospectiva.
+🧠 Gatilho: o prefixo "Ana-" indica retorno (passado), "Cata-" indica projeção
+(futuro). Português · P9 · deslocamento
+```
+
+Repare no que o item faz: ele não erra dizendo uma bobagem sobre anáfora. Ele define catáfora corretamente e pendura o nome errado nessa definição. Quem sabe as duas coisas separadas, mas nunca fixou a fronteira, marca certo e erra.
 
 #### Do prompt ao Anki
 
