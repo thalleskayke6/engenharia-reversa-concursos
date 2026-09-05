@@ -108,7 +108,7 @@ Videoaula integral e PDF teórico de centenas de páginas. Resumo manuscrito col
 
 ### O canal
 
-Tudo isso vem de [@ValterRodrigues01](https://www.youtube.com/@ValterRodrigues01). Os vídeos que dão a espinha dorsal do método são [Questões, Anki e NADA MAIS!](https://www.youtube.com/watch?v=B2hvxDneLms), [Vendo a matéria pela primeira vez e indo para as questões](https://www.youtube.com/watch?v=bZgatYEUUN0), [Especificidade](https://www.youtube.com/watch?v=Q132w-ZpE3E), [Por que mudei meu jeito de montar cadernos e fazer filtros](https://www.youtube.com/watch?v=XWkY1ChV57U) e as duas aulas de IA, [01](https://www.youtube.com/watch?v=P-cKMJOVySk) e [02](https://www.youtube.com/watch?v=76RLDpFWTxE). A lista completa está nas [referências](#referências).
+Tudo isso vem de [@ValterRodrigues01](https://www.youtube.com/@ValterRodrigues01). Os vídeos que dão a espinha dorsal do método são [Questões, Anki e NADA MAIS!](https://www.youtube.com/watch?v=B2hvxDneLms), [Vendo a matéria pela primeira vez e indo para as questões](https://www.youtube.com/watch?v=bZgatYEUUN0), [Especificidade](https://www.youtube.com/watch?v=Q132w-ZpE3E), [Por que mudei meu jeito de montar cadernos e fazer filtros](https://www.youtube.com/watch?v=XWkY1ChV57U) e as duas aulas de IA, [01](https://www.youtube.com/watch?v=P-cKMJOVySk) e [02](https://www.youtube.com/watch?v=76RLDpFWTxE). A lista completa está nas [referências](#referências). Ele também atende por consultoria, e o contato está em [consultoria e contato](#consultoria-e-contato).
 
 ---
 
@@ -1051,6 +1051,17 @@ Todas as fontes primárias são vídeos públicos do canal [Valter Rodrigues](ht
 50. [Por onde andei??](https://www.youtube.com/watch?v=fszZmxEouMw)
 51. [Vamos bater um papo...](https://www.youtube.com/watch?v=zHmanlJ-gQg)
 52. [Uma homenagem a meu pai](https://www.youtube.com/watch?v=liubcTwBR6U)
+
+---
+
+## Consultoria e contato
+
+Valter Rodrigues atende por consultoria, orientando a preparação de forma individual.
+Quem quiser falar com ele sobre isso, ou sobre qualquer coisa relativa ao conteúdo do
+canal, escreve para **consultoria.valter@gmail.com**.
+
+Este repositório não intermedeia nada e não recebe nada por essa indicação. O contato
+é direto com ele.
 
 ---
 
