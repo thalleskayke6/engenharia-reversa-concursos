@@ -642,26 +642,27 @@ Cada bloco resolve um problema específico:
 | Lista de proibições | Desliga os vícios conversacionais do assistente, como preâmbulo e oferta de continuação |
 | Exemplo resolvido | Ensina, por demonstração, que o erro deve ser distorção sutil e verossímil, não absurdo evidente |
 
-### 11.6 O prompt otimizado (v5.4.1)
+### 11.6 O prompt otimizado (v5.5)
 
-O prompt da seção anterior resolve um problema: fazer a IA gerar um item no estilo da banca sem inventar conteúdo. A versão desta seção resolve outros treze, que só aparecem depois de algumas centenas de cards no baralho. Foi calibrada para a FGV, e a lógica se transporta para outras bancas trocando o catálogo de pegadinhas.
+O prompt da seção anterior resolve um problema: fazer a IA gerar um item no estilo da banca sem inventar conteúdo. A versão desta seção resolve outros vinte, que só aparecem depois de algumas centenas de cards no baralho. Foi calibrada para a FGV, e a lógica se transporta para outras bancas trocando o catálogo de pegadinhas.
 
-O texto completo, pronto para copiar e colar na primeira mensagem da conversa, está em [`prompts/gerador-de-cards-fgv.md`](prompts/gerador-de-cards-fgv.md). Abaixo vai o esqueleto e a razão de cada peça.
+O texto completo, pronto para copiar e colar na primeira mensagem da conversa, está em [`prompts/gerador-de-cards-fgv.md`](prompts/gerador-de-cards-fgv.md), com o histórico de versões no fim. Abaixo vai o esqueleto e a razão de cada peça.
 
 #### O esqueleto
 
 | Seção | O que trava |
 |---|---|
-| 1. Regras de ouro da entrada | O excerto é a verdade absoluta, veto por baixa incidência, proibição de metalinguagem, e o limite entre usar o estilo da banca e importar conteúdo dela |
-| 2. Segurança factual | Cão de guarda contra embelezamento, proibição de doutrinar, linguagem seca, verso autônomo |
-| 3. Seleção de formato | Cloze, certo/errado ou contraste discriminativo, um card por trecho, com ordem de precedência |
+| 0. Hierarquia de decisão | A ordem de precedência entre os cinco princípios, para resolver qualquer colisão de regras |
+| 1. Regras de ouro da entrada | O excerto é a verdade absoluta, veto por baixa incidência, proibição de metalinguagem, e a exceção única que permite nomear o instituto vizinho |
+| 2. Segurança factual | Cão de guarda contra embelezamento, proibição de doutrinar, verso autônomo, e a fronteira entre literalidade do enunciado e reescrita da justificativa |
+| 3. Seleção de formato | Cloze, certo/errado ou contraste, um card por trecho, proibição de fatiar rol, e as cinco regras travadas do cloze |
 | 4. Catálogo de malícia | P1 a P10 e T1 a T5, os mecanismos de erro que a banca recicla |
-| 5. Formatação em 3 camadas | Leitura no chat, HTML da frente, HTML do verso |
-| 6. Legenda de cores | Cada código de pegadinha tem cor e figurinha fixas |
-| 7. Exemplos | Dois itens resolvidos, um de contraste e um standard |
-| 8. O que não fazer | A lista de vícios do assistente que precisam ficar desligados |
+| 5. Formatação em 3 camadas | Leitura no chat, HTML da frente, HTML do verso, e o campo Referência sem citação inventada |
+| 6. Legenda de cores | Cor e figurinha fixas por código, e verde-água para todo item CERTO |
+| 7. Exemplos | Três itens resolvidos: contraste, standard errado e certo difícil |
+| 8. Distribuição | 50/50 com alternância obrigatória, trava de três iguais, e as técnicas C1 a C4 do item certo difícil |
 | 9. Regra de sutileza | O erro tem que passar por verdadeiro para quem não domina o ponto |
-| 10. Distribuição e dúvida | 50/50 de gabarito com relatório por lote, e a ordem de parar em vez de deduzir |
+| 10. O que não fazer | A lista de vícios do assistente que precisam ficar desligados |
 
 #### O que cada módulo acrescenta
 
@@ -680,6 +681,12 @@ O texto completo, pronto para copiar e colar na primeira mensagem da conversa, e
 | Regra de sutileza | Proíbe o erro denunciado por palavra absoluta e exige o teste "um candidato que não domina isso leria como verdadeiro?" | Item errado óbvio treina a detectar exagero, não a dominar a norma |
 | Distribuição 50/50 com relatório | Planeja a proporção no lote e reporta ao final de seis ou mais itens | Sequência longa de itens errados vicia o dedo. Você começa a acertar por padrão, não por conteúdo |
 | Protocolo de dúvida | Manda parar e pedir o resumo em vez de deduzir | É a trava final contra alucinação, para o caso em que o excerto colado não basta |
+| Hierarquia de decisão | Ordena os cinco princípios do prompt, de fidelidade ao excerto até balanceamento | Prompt longo sempre acumula regras que colidem. Sem ordem de precedência, o modelo obedece a que leu por último e você não descobre por qual critério ele decidiu |
+| Técnicas C1 a C4 | Trata o item CERTO com o mesmo rigor do errado: armadilha aparente, reformulação sinonímica, caso concreto, regra com exceção verdadeira | O gerador sabe fabricar erro com técnica e produz acerto por cópia. O baralho fica com item certo sempre óbvio, e o cérebro aprende a marcar "errado" antes de ler o enunciado |
+| Alternância e trava de sequência | O gabarito alterna dentro da conversa e três iguais seguidos ficam proibidos | A meta de 50/50 existia sem mecanismo que a fizesse acontecer |
+| Regras travadas do cloze | Nunca apagar o termo que nomeia o conceito, apagar o atributo discriminante, no máximo duas lacunas, contexto obrigatório fora do cloze | Cloze mal feito vira adivinhação. Apagar o nome do conceito deixa uma frase que não identifica do que se trata, e você chuta em vez de evocar |
+| Proibição de fatiar rol | Lista de requisitos ou etapas rende um card só, atacando a lista inteira | Rol de cinco elementos virava cinco cards, e a fila diária estourava por causa de um parágrafo |
+| Campo Referência | Cita lei quando existe, e usa matéria e assunto quando não existe | O modelo preenche rodapé vazio inventando artigo. Card com citação falsa é pior do que card sem citação |
 
 #### Um exemplo de saída
 
