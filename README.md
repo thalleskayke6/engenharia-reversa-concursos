@@ -37,6 +37,7 @@ Palavras-chave: estudo por questões, engenharia reversa de banca, prática de r
 
 | # | Seção | O que resolve |
 |---|---|---|
+| 0 | [O método em uma página](#o-método-em-uma-página) | O artigo inteiro condensado, para consulta rápida |
 | 1 | [O problema do estudo passivo](#1-o-problema-do-estudo-passivo) | Por que o eixo tradicional falha |
 | 2 | [Corpus e método desta sistematização](#2-corpus-e-método-desta-sistematização) | De onde vem cada afirmação |
 | 3 | [O autor do método](#3-o-autor-do-método) | Quem é e por que isso importa |
@@ -54,6 +55,60 @@ Palavras-chave: estudo por questões, engenharia reversa de banca, prática de r
 | 15 | [Limitações](#15-limitações) | Onde o método não alcança |
 | 16 | [Conclusão](#16-conclusão) | |
 | | [Referências](#referências) | Os 52 vídeos, com link |
+
+---
+
+## O método em uma página
+
+Quem não quiser ler as dezesseis seções pode começar por aqui. Isto é o artigo inteiro condensado, e cada bloco tem link para a parte que explica o porquê.
+
+### O dia
+
+1. Escolhe uma matéria do ciclo de elite e uma do ciclo de rodízio ([seção 9](#9-cronograma-em-ciclo-duplo)).
+2. Assunto novo: dez a quinze minutos de resumo, só para aprender o vocabulário. Nada de videoaula longa ([5.1](#51-camada-1-o-primeiro-contato-com-um-assunto-novo)).
+3. Vai para um bloco de 20 a 30 questões da banca do seu concurso, no seu nível de cargo ([5.2](#52-camada-2-a-resolução)).
+4. Lê o comando antes do texto, grifa modal, advérbio de restrição, prazo e competência ([6.1](#61-a-ordem-de-leitura) e [6.2](#62-o-que-grifar)).
+5. Acertou com convicção, segue. Errou ou chutou, gasta três minutos: gabarito, comentário do professor, literalidade da lei ([6.5](#65-o-minuto-a-minuto-depois-do-gabarito)).
+6. Transforma o erro em um card e importa no Anki ([10.3](#103-adicionar-um-cartão-clique-a-clique) e [10.6](#106-importação-em-lote)).
+7. Zera a fila de revisão no celular, fragmentada ao longo do dia, fora da contagem de horas ([10.7](#107-backlog)).
+
+### Os números
+
+| Item | Valor |
+|---|---|
+| Teoria por assunto novo | 10 a 15 min |
+| Bloco de questões | 20 a 30 por assunto |
+| Tempo por questão no treino | 1 a 2 min |
+| Meta diária de questões | 30 a 50 |
+| Critério para avançar de assunto | 80% a 85% de acerto |
+| Horas líquidas por dia | 2 a 4, todos os dias |
+| Correção de cada erro | 3 min |
+| Card no Anki | 3 linhas na frente, 3 no verso, 16 a 20 s |
+| Cards novos por dia | 25 a 30 |
+| Tempo diário de Anki | 25 a 40 min, fragmentado |
+| Retenção no FSRS | 90% padrão, 86% a 87% longo prazo, 94% reta final |
+| Teto por caderno seriado | 20 questões |
+| Recorte de anos no filtro | últimos 3 a 5 |
+| Faixa do iniciante | questões com 85% a 90% de acerto geral |
+| Onde a estatística começa a valer | a partir de 75% a 80% de acerto |
+| Tempo mínimo no mesmo método | 6 meses |
+| Tempo por item na prova | 2 a 3 min |
+
+### As três regras que sustentam tudo
+
+Especificidade: treine no formato exato da prova, filtrado pela banca do seu certame. Ler doutrina não é treino ([4.1](#41-especificidade)).
+
+Acerto por sorte é erro: se você chutou e acertou, faça o card mesmo assim. É o que impede a sua estatística de mentir para você ([5.3](#53-o-protocolo-de-correção)).
+
+Prioridade é peso vezes incidência: o que a disciplina vale no edital multiplicado pelo quanto a banca cobra aquele assunto. O resto se estuda por amostragem ou não se estuda ([8.3](#83-incidência-e-peso-do-edital)).
+
+### O que o método manda cortar
+
+Videoaula integral e PDF teórico de centenas de páginas. Resumo manuscrito colorido. Caderno de erros em papel ou planilha, porque o repositório de erro é o Anki ([6.6](#66-onde-o-erro-fica-registrado)). Calendário fixo de revisão em 24 horas, 7 dias e 30 dias, porque quem agenda é o algoritmo. Baralho de Anki pronto comprado de terceiros. Questão de 96% de erro, que não volta na sua prova ([8.1](#81-o-ranking-de-dificuldade)). Trocar de método a cada nota baixa ([14](#14-erros-comuns)).
+
+### O canal
+
+Tudo isso vem de [@ValterRodrigues01](https://www.youtube.com/@ValterRodrigues01). Os vídeos que dão a espinha dorsal do método são [Questões, Anki e NADA MAIS!](https://www.youtube.com/watch?v=B2hvxDneLms), [Vendo a matéria pela primeira vez e indo para as questões](https://www.youtube.com/watch?v=bZgatYEUUN0), [Especificidade](https://www.youtube.com/watch?v=Q132w-ZpE3E), [Por que mudei meu jeito de montar cadernos e fazer filtros](https://www.youtube.com/watch?v=XWkY1ChV57U) e as duas aulas de IA, [01](https://www.youtube.com/watch?v=P-cKMJOVySk) e [02](https://www.youtube.com/watch?v=76RLDpFWTxE). A lista completa está nas [referências](#referências).
 
 ---
 
